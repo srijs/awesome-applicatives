@@ -60,7 +60,7 @@ instance Applicative (Result a) where
       (Ok f, Ok b) ->
         Ok (f b)
       (Err (a, as), Err (a', as')) ->
-        Err (a, as ++ [a] ++ as')
+        Err (a, as ++ [a'] ++ as')
       (Err (a, as), _) ->
         Err (a, as)
       (_, Err (a, as)) ->
